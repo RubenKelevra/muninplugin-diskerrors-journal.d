@@ -5,6 +5,8 @@
 #
 #%# family=manual
 
+#see: https://ata.wiki.kernel.org/index.php/Libata_error_messages#SATA_SError_expansion
+
 disks=('sda' 'sdb' 'sdc' 'sdd' 'sde') #define disks 
 value=-2
 log_file='/tmp/munin_plugin_ata_serr.log'
