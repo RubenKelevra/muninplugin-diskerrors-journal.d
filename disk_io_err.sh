@@ -37,12 +37,12 @@ else
 	time_arg=`echo "--since=\"$time_arg\""`
 fi
 
-eval journalctl --no-pager -k -o cat -p 3 $time_arg 2>&1 > /dev/null
+eval journalctl --no-pager -k -o cat -p 3 $time_arg 2>/dev/null > /dev/null
 
 tmp=`date --rfc-3339="seconds"`
 echo "${tmp:0:19}" > $time_file
 
-eval journalctl --no-pager -k -o cat -p 3 $time_arg 2>&1 | grep "end_request: I/O error" > $log_file
+eval journalctl --no-pager -k -o cat -p 3 $time_arg 2>/dev/null | grep "end_request: I/O error" > $log_file
 
 tmp=''
 
