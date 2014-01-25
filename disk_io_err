@@ -34,7 +34,7 @@ if [ ! -f $time_file ]; then
 	time_arg='-b 0'
 else
 	time_arg=`cat $time_file`
-	time_arg='--since="$time_arg"'
+	time_arg=`echo "--since=\"${time_arg:0:19}\""`
 fi
 
 journalctl --no-pager -k -o cat -p 3 $time_arg 2>&1 > /dev/null
